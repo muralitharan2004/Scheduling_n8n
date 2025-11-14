@@ -14,11 +14,9 @@ This workflow helps you automate:
 
 It is useful for office teams, personal reminders, educational institutions, and automated communication systems.
 
-🏗 Workflow Architecture
-┌────────────────┐       ┌──────────────────────┐      ┌───────────────┐      ┌────────────────┐
-│ Schedule       │ ----> │ Google Sheet Reader  │ ---->│  Code Node     │ ---->│ Gmail Sender   │
-│ Trigger        │       │ (Get rows)           │      │ (processing)   │      │ (Send Email)   │
-└────────────────┘       └──────────────────────┘      └───────────────┘      └────────────────┘
+<img width="978" height="378" alt="image" src="https://github.com/user-attachments/assets/4eca665e-4ab8-453b-a049-d7683fbc6657" />
+<br>
+
 
 📂 Features
 
@@ -32,15 +30,8 @@ Gmail Sender – sends personalized emails automatically
 
 Fully Customizable – adjust timing, message format, Google Sheet structure, etc.
 
-📄 Example Google Sheet Format
-
-Your Google Sheet should follow this structure:
-
-Meeting Title	Date	Time	Participants	Message
-Team Sync	2025-01-12	10:00 AM	team@example.com
-	Monthly sync-up meeting
-Review Call	2025-01-13	04:00 PM	hr@example.com
-	Performance review reminder
+<br>
+	
 ⚙️ Node-by-Node Explanation
 1. Schedule Trigger
 
@@ -60,6 +51,7 @@ Sheet ID + Range
 
 Processes fetched data using JavaScript logic.
 
+<br>
 Sample Code:
 
 // Get rows from previous node
@@ -84,6 +76,8 @@ rows.forEach(item => {
             subject: `Reminder: ${data['Meeting Title']}`,
             email: data.Participants,
             message:
+
+			<br>
 `Hi,
 
 This is a reminder for your meeting:
@@ -101,6 +95,7 @@ Meeting Scheduler Bot`
 });
 
 return filtered.map(item => ({ json: item }));
+<br>
 
 4. Gmail → Send Message
 
@@ -113,6 +108,7 @@ To: {{$json["email"]}}
 Subject: {{$json["subject"]}}
 
 Message: {{$json["message"]}}
+<br>
 
 🧰 Requirements
 Component	Requirement
@@ -121,14 +117,14 @@ Google Sheets API	Credentials + shared sheet
 Gmail API	OAuth2 or App Password
 Spreadsheet	Correct column format
 🚀 Installation
-
+<br>
 Clone the repository:
 
 git clone https://github.com/<your-user>/<your-repo>.git
 
 
 Open n8n → Import workflow.json
-
+<br>
 Add:
 
 Google Sheets credentials
@@ -138,7 +134,7 @@ Gmail credentials
 Insert your Google Sheet ID into the Google Sheet node
 
 Update your schedule timing
-
+<br>
 Activate workflow ✓
 
 📨 Example Email Output
@@ -156,14 +152,14 @@ Monthly sync-up meeting
 
 Regards,
 Meeting Scheduler Bot
-
+<br>
 📁 Repository Structure
 📦 Meeting-Scheduler-Workflow
  ┣ 📄 README.md
  ┣ 📄 workflow.json
  ┗ 📂 assets
      ┗ 📸 workflow_screenshot.png
-
+<br>
 🛠 Customization
 
 You can modify:
@@ -179,12 +175,12 @@ HTML email templates
 Schedule timing
 
 If you want help customizing, I can edit the Code node for your exact logic.
-
+<br>
 🤝 Contributing
 
 Pull requests are welcome!
 Feel free to open issues or suggest improvements.
-
+<br>
 📜 License
 
 MIT License — free to use and modify.
