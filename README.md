@@ -1,4 +1,4 @@
-<b>📅 Meeting Scheduler Workflow (n8n)
+<hx>📅 Meeting Scheduler Workflow (n8n)</hx>
 
 An automated Meeting Scheduler Agent built using n8n.
 This workflow reads meeting details from Google Sheets, processes them with custom logic, and automatically sends email notifications using Gmail — all without manual effort.
